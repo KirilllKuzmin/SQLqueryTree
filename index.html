@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>SQL query tree</title>
+</head>
+
+<body>
+    <img src="img/tree.svg" usemap="#Navigation" class="rounded mx-auto d-block" />
+    <p><map id="Navigation" name="Navigation">
+            <area shape="rect" coords="308,200,518,235" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+            <area shape="rect" coords="308,245,518,275" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="">
+            <area shape="rect" coords="308,285,518,325" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="">
+            <area shape="rect" coords="308,332,518,357" data-bs-toggle="modal" data-bs-target="#exampleModal4" href="">
+            <area shape="rect" coords="308,363,518,390" data-bs-toggle="modal" data-bs-target="#exampleModal5" href="">
+
+            <area shape="rect" coords="308,420,518,455" data-bs-toggle="modal" data-bs-target="#exampleModal6" href="">
+            <area shape="rect" coords="308,465,518,505" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="">
+            <area shape="rect" coords="308,510,518,530" data-bs-toggle="modal" data-bs-target="#exampleModal7" href="">
+
+            <area shape="rect" coords="308,710,518,745" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="">
+            <area shape="rect" coords="308,755,518,795" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="">
+            <area shape="rect" coords="308,803,518,828" data-bs-toggle="modal" data-bs-target="#exampleModal4" href="">
+            <area shape="rect" coords="308,833,518,860" data-bs-toggle="modal" data-bs-target="#exampleModal5" href="">
+
+            <area shape="rect" coords="308,0,420,30" data-bs-toggle="modal" data-bs-target="#exampleModal8" href="">
+
+            <area shape="rect" coords="0,205,126,260" data-bs-toggle="modal" data-bs-target="#exampleModal9" href="">
+        </map></p>
+    <!-- Кнопка-триггер модального окна -->
+    <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Запустите демо модального окна
+    </button>-->
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Имена столбцов</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Указание имен столбцов, с которыми будет проводиться работа в запросе.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Выражения</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Выражение представляет собой комбинацию одного или нескольких значений,
+                    операторов и функций, которые оценивают значение.<br>
+                    <br>
+                    Функции языка SQL могут быть агрегатными, скалярными и аналитическими.<br>
+                    <br>
+                    Агрегатные функции выполняют вычисления над группой значений
+                    столбца и всегда возвращают одно значение результата этих вычислений.<br>
+                    <br>
+                    Агрегатные функции: AVG (среднее значение), MIN, MAX, COUNT (подсчет кол-ва), SUM.<br>
+                    <br>
+                    Скалярная функция выполняет вычисления над одним значением
+                    или списком значений.<br>
+                    <br>
+                    Скалярные функции: ABS, COS, SIN, DEGREES, RADIANS, ROUND,
+                    EXP, PI, SQRT, GETDATE, DATENAME, CHAR, LEN, REPLACE, REVERSE<br>
+                    <br>
+                    Аналитические оконные функции, или функции распределения,
+                    предоставляют информацию о распределении данных и используются
+                    в основном для статистического анализа.<br>
+                    <br>
+                    В соответствии со стандартом SQL, аналитические функции вычисляют относительный
+                    ранг строки в секции окна, выраженный как дробное число от нуля до единицы,
+                    которое большинство воспринимает как процент.<br>
+                    Две функции - PERCENT_RANK и CUME_DIST.<br>
+                    <br>
+                    Функции обратного распределения, более известные под именем процентелей,
+                    выполняют вычисление, которое можно считать обратным к функциям
+                    распределения рангов.<br>
+                    Существует два основных варианта функций обратного
+                    распределения: PERCENTILE_DISC и PERCENTILE_CONT.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Подзапрос</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Используется, если требуется сравнить результаты нескольких выборок SELECT. Структура подзапроса
+                    совпадает со структурой обычного запроса.
+                    <br>
+                    Запросы бывают коррелированными и некоррелироваными.
+                    Коррелированные запросы отличаются от некоррелированных тем, что для каждого
+                    столбца из выборки код будет выполняться заново и будет создаваться новое значение.
+                    Это очень сильно нагружает процесс, расход времени и памяти.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Операторы</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Операторы SQL используются для указания сравнений между выражениями.
+                    BETWEEN, B, IS NULL, LIKE.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Константы</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    В некоторых инструкциях SQL необходимо указывать значения чисел,
+                    строк или даты в текстовом виде. Для этого используется соответствующий
+                    тип константы: числовой, строковый или константа даты и время
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Имена таблиц</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Указание имен таблиц, с которыми будет проводиться работа в запросе.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Транспонированные таблицы</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Реляционные операторы PIVOT и UNPIVOT можно использовать для изменения
+                    возвращающего табличное значение выражения в другой таблице.PIVOT поворачивает
+                    возвращающее табличное значение выражение, преобразуя уникальные значения одного
+                    столбца выражения в несколько выходных столбцов. в случае необходимости PIVOT также
+                    объединяет оставшиеся повторяющиеся значения столбца и отображает их в выходных данных.
+                    UNPIVOT выполняет действия, обратные PIVOT, преобразуя столбцы возвращающего табличное
+                    значение в значения столбца.<br><br>
+                    <pre>
+                    PIVOT(&ltaggregation function>(&ltcolumn being aggregated>)
+                        FOR 
+                        [&ltcolumn that contains the values that will become column headers>]
+                        IN ( [first pivoted column], [second pivoted column],
+                        ... [last pivoted column])
+                        ) AS &ltalias for the pivot table>
+                        &ltoptional ORDER BY clause>;
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Запрос</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Запрос - это набор команд для работы с базой данных.<br><br>
+
+                    Запросы бывают трех видов. Разберем первый - одиночный запрос к одной таблице.<br><br>
+
+                    Самый простой вариант запроса - это комбинация фраз SELECT и FROM, например: SELECT * FROM
+                    table_name;
+                    Здесь SELECT, FROM — обязательные элементы запроса, которые определяют выбранные столбцы, их порядок
+                    и источник данных. * - выбрать всё.<br><br>
+
+                    Фраза SELECT включает в себя некоторые действия и объекты: выборку столбцов, функции, подзапрос,
+                    выражения, операторы, константы и коррелированный подзапрос.
+                    Фраза FROM включает в себя: выборку таблиц, подзапрос, коррелированный подзапрос.
+                    Если задача требует осуществить запрос с определенным условием, следует использовать фразу WHERE.
+                    Она так же включает в себя действия и объекты: выражения, подзапрос, операторы,
+                    константы,коррелированный подзапрос и функции.
+                    Для более приятного вида таблицу, полученную в результате запроса, можно отсортировать, использовав
+                    фразу ORDER BY.
+                    Для удобства или по требованию задачи, можно сгруппировать строки полученной таблицы с помощью фразы
+                    GROUP BY.
+                    Если требуется отфильтровать набор по значениям агрегатных функций, следует использовать фразу
+                    HAVING.<br><br>
+
+                    Второй вид запроса - объединение нескольких запросов.<br><br>
+
+                    Используя теоретико-множественные операции UNION, INTERSECT и MINUS мы можем объединить, пересечь
+                    или вычесть друг из друга соответственно результаты выборок.<br><br>
+
+                    Третий вид - одиночный запрос к нескольким таблицам.<br><br>
+
+                    С помощью соединения можно получать данные из двух или нескольких таблиц на основе логических связей
+                    между ними.<br><br>
+
+                    Четвертый вид - создание некоего подобия временной таблицы.<br><br>
+
+                    Обобщенное табличное выражение определяется с помощью конструкции WITH, и определить его можно как в
+                    обычных запросах, так и в функциях, хранимых процедурах, триггерах и представлениях.<br><br>
+
+                    Для наглядности приведено дерево, показывающее структуру запроса.<br><br>
+
+                    Теперь рассмотрим раннее упомянутые действия и объекты более подробно в виде схем.<br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Теоретико-множественные операции</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Объединение выборок UNION<br>
+                    Пересечение выборок INTERSECT<br>
+                    Вычитание выборок MINUS<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
