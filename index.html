@@ -34,6 +34,8 @@
             <area shape="rect" coords="308,0,420,30" data-bs-toggle="modal" data-bs-target="#exampleModal8" href="">
 
             <area shape="rect" coords="0,205,126,260" data-bs-toggle="modal" data-bs-target="#exampleModal9" href="">
+
+            <area shape="rect" coords="1000,221,1150,280" data-bs-toggle="modal" data-bs-target="#exampleModal10" href="">
         </map></p>
     <!-- Кнопка-триггер модального окна -->
     <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -241,9 +243,6 @@
 
                     Четвертый вид - создание некоего подобия временной таблицы.<br><br>
 
-                    Обобщенное табличное выражение определяется с помощью конструкции WITH, и определить его можно как в
-                    обычных запросах, так и в функциях, хранимых процедурах, триггерах и представлениях.<br><br>
-
                     Для наглядности приведено дерево, показывающее структуру запроса.<br><br>
 
                     Теперь рассмотрим раннее упомянутые действия и объекты более подробно в виде схем.<br><br>
@@ -254,20 +253,58 @@
 
     <!-- Модальное окно -->
     <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Теоретико-множественные операции</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    Объединение выборок UNION<br>
-                    Пересечение выборок INTERSECT<br>
-                    Вычитание выборок MINUS<br>
+                    Объединение выборок UNION:<br><br>
+
+                    <pre>
+                SELECT column1, column2 FROM table1
+                UNION [ALL]
+                SELECT column1, column2 FROM table2;
+                    </pre>
+
+                    Пересечение выборок INTERSECT:<br><br>
+
+                    <pre>
+                SELECT column1, column2 FROM table1
+                INTERSECT
+                SELECT column1, column2 FROM table2;
+                    </pre>
+
+                    Вычитание выборок MINUS:<br><br>
+
+                    <pre>
+                SELECT column1, column2 FROM table1
+                MINUS
+                SELECT column1, column2 FROM table2;
+                    </pre>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">WITH</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Обобщенное табличное выражение определяется с помощью конструкции WITH, и определить его можно как в
+                    обычных запросах, так и в функциях, хранимых процедурах, триггерах и представлениях.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
