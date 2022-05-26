@@ -69,7 +69,19 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    Указание имен столбцов, с которыми будет проводиться работа в запросе.
+                    Значение двух полей из всех записей<br><br>
+                    SELECT column1, column2 FROM table;<br><br>
+                    Значение всех полей для всех записей<br><br>
+                    SELECT * FROM table;<br><br>
+                    Только уникальные значение<br><br>
+                    SELECT DISTINCT column1 FROM table;<br><br>
+                    Сортировка по возрастанию/убыванию<br><br>
+                    SELECT * FROM table<br>
+                    ORDER BY column1 ASC [DESC];<br><br>
+                    Пропустить offset записей и вывести n-записей<br><br>
+                    SELECT * FROM table<br>
+                    ORDER BY column1<br>
+                    LIMIT n OFFSET offset;<br>
                 </div>
             </div>
         </div>
@@ -182,19 +194,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    Значение двух полей из всех записей<br><br>
-                    SELECT column1, column2 FROM table;<br><br>
-                    Значение всех полей для всех записей<br><br>
-                    SELECT * FROM table;<br><br>
-                    Только уникальные значение<br><br>
-                    SELECT DISTINCT column1 FROM table;<br><br>
-                    Сортировка по возрастанию/убыванию<br><br>
-                    SELECT * FROM table<br>
-                    ORDER BY column1 ASC [DESC];<br><br>
-                    Пропустить offset записей и вывести n-записей<br><br>
-                    SELECT * FROM table<br>
-                    ORDER BY column1<br>
-                    LIMIT n OFFSET offset;<br>
+                    Указание имен таблиц, с которыми будет проводиться работа в запросе.
+                    
                 </div>
             </div>
         </div>
