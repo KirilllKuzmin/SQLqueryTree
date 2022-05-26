@@ -16,26 +16,44 @@
 <body>
     <img src="img/tree.svg" usemap="#Navigation" class="rounded mx-auto d-block" />
     <p><map id="Navigation" name="Navigation">
-            <area shape="rect" coords="308,200,518,235" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
-            <area shape="rect" coords="308,245,518,275" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="">
-            <area shape="rect" coords="308,285,518,325" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="">
-            <area shape="rect" coords="308,332,518,357" data-bs-toggle="modal" data-bs-target="#exampleModal4" href="">
-            <area shape="rect" coords="308,363,518,390" data-bs-toggle="modal" data-bs-target="#exampleModal5" href="">
+            <area shape="rect" coords="308,230,518,265" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+            <area shape="rect" coords="308,277,518,306" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="">
+            <area shape="rect" coords="308,320,518,350" data-bs-toggle="modal" data-bs-target="#exampleModal4" href="">
+            <area shape="rect" coords="308,360,518,390" data-bs-toggle="modal" data-bs-target="#exampleModal5" href="">
 
             <area shape="rect" coords="308,420,518,455" data-bs-toggle="modal" data-bs-target="#exampleModal6" href="">
-            <area shape="rect" coords="308,465,518,505" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="">
-            <area shape="rect" coords="308,510,518,530" data-bs-toggle="modal" data-bs-target="#exampleModal7" href="">
+            <area shape="rect" coords="308,467,518,500" data-bs-toggle="modal" data-bs-target="#exampleModal7" href="">
 
-            <area shape="rect" coords="308,710,518,745" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="">
-            <area shape="rect" coords="308,755,518,795" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="">
-            <area shape="rect" coords="308,803,518,828" data-bs-toggle="modal" data-bs-target="#exampleModal4" href="">
-            <area shape="rect" coords="308,833,518,860" data-bs-toggle="modal" data-bs-target="#exampleModal5" href="">
+            <area shape="rect" coords="308,657,518,690" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">
+            <area shape="rect" coords="308,700,518,730" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="">
+            <area shape="rect" coords="308,737,518,777" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="">
+            <area shape="rect" coords="308,783,518,808" data-bs-toggle="modal" data-bs-target="#exampleModal4" href="">
+            <area shape="rect" coords="308,812,518,845" data-bs-toggle="modal" data-bs-target="#exampleModal5" href="">
 
-            <area shape="rect" coords="308,0,420,30" data-bs-toggle="modal" data-bs-target="#exampleModal8" href="">
+            <area shape="rect" coords="308,875,518,910" data-bs-toggle="modal" data-bs-target="#exampleModal6" href="">
+            <area shape="rect" coords="308,920,518,960" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="">
+            <area shape="rect" coords="308,970,518,985" data-bs-toggle="modal" data-bs-target="#exampleModal7" href="">
 
-            <area shape="rect" coords="0,205,126,260" data-bs-toggle="modal" data-bs-target="#exampleModal9" href="">
+            <area shape="rect" coords="308,1150,518,1187" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+                href="">
+            <area shape="rect" coords="308,1195,518,1235" data-bs-toggle="modal" data-bs-target="#exampleModal3"
+                href="">
+            <area shape="rect" coords="308,1243,518,1268" data-bs-toggle="modal" data-bs-target="#exampleModal4"
+                href="">
+            <area shape="rect" coords="308,1273,518,1300" data-bs-toggle="modal" data-bs-target="#exampleModal5"
+                href="">
 
-            <area shape="rect" coords="1000,221,1150,280" data-bs-toggle="modal" data-bs-target="#exampleModal10" href="">
+            <area shape="rect" coords="305,0,417,30" data-bs-toggle="modal" data-bs-target="#exampleModal8" href="">
+
+            <area shape="rect" coords="0,205,121,260" data-bs-toggle="modal" data-bs-target="#exampleModal9" href="">
+
+            <area shape="rect" coords="995,221,1150,280" data-bs-toggle="modal" data-bs-target="#exampleModal10"
+                href="">
+
+            <area shape="rect" coords="594,320,716,350" data-bs-toggle="modal" data-bs-target="#exampleModal11" href="">
+            <area shape="rect" coords="740,320,860,350" data-bs-toggle="modal" data-bs-target="#exampleModal12" href="">
+            <area shape="rect" coords="770,230,880,260" data-bs-toggle="modal" data-bs-target="#exampleModal13" href="">
+            <area shape="rect" coords="600,230,710,260" data-bs-toggle="modal" data-bs-target="#exampleModal14" href="">
         </map></p>
     <!-- Кнопка-триггер модального окна -->
     <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -164,7 +182,19 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    Указание имен таблиц, с которыми будет проводиться работа в запросе.
+                    Значение двух полей из всех записей<br><br>
+                    SELECT column1, column2 FROM table;<br><br>
+                    Значение всех полей для всех записей<br><br>
+                    SELECT * FROM table;<br><br>
+                    Только уникальные значение<br><br>
+                    SELECT DISTINCT column1 FROM table;<br><br>
+                    Сортировка по возрастанию/убыванию<br><br>
+                    SELECT * FROM table<br>
+                    ORDER BY column1 ASC [DESC];<br><br>
+                    Пропустить offset записей и вывести n-записей<br><br>
+                    SELECT * FROM table<br>
+                    ORDER BY column1<br>
+                    LIMIT n OFFSET offset;<br>
                 </div>
             </div>
         </div>
@@ -290,21 +320,191 @@
 
     <!-- Модальное окно -->
     <div class="modal fade" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">WITH</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    Обобщенное табличное выражение определяется с помощью конструкции WITH, и определить его можно как в
-                    обычных запросах, так и в функциях, хранимых процедурах, триггерах и представлениях.
+                    Oracle SQL оператор WITH позволяет дать блоку подзапроса имя/псевдоним, на которое можно
+                    ссылаться в нескольких местах основного SQL-запроса. Имя, присвоенное подзапросу, обрабатывается
+                    так, как если бы оно было встроенным представлением или таблицей. SQL оператор WITH по сути является
+                    заменой обычному подзапросу.<br>
+                    Пример WITH с функцией<br><br>
+                    <pre>
+                    WITH
+                    FUNCTION with_function(p_id IN NUMBER) RETURN NUMBER IS
+                    BEGIN
+                    RETURN p_id;
+                    END;
+                    SELECT with_function(id)
+                    FROM t1
+                    WHERE rownum = 1
+
+                    --результат
+                    WITH_FUNCTION(ID)
+                    </pre>
+                    Оператор WITH с рекурсией<br><br>
+                    <pre>
+                    with numbers(nn) as (
+                    select 1 as nn
+                    from dual
+
+                    union all
+
+                    select nn+1 as nn
+                    from numbers
+                    where nn&lt10 ) select * from numbers
+                    </pre>
                 </div>
             </div>
         </div>
     </div>
 
-    
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Внутреннее соединение</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Оператор внутреннего соединения INNER JOIN соединяет две таблицы. Порядок таблиц для оператора
+                    неважен, поскольку оператор является коммутативным.<br><br>
+                    Заголовок таблицы-результата является
+                    объединением (конкатенацией) заголовков соединяемых таблиц.<br><br>
+                    Тело результата логически формируется следующим образом. Каждая строка одной таблицы сопоставляется
+                    с каждой строкой второй таблицы, после чего для полученной «соединённой» строки проверяется условие
+                    соединения (вычисляется предикат соединения). Если условие истинно, в таблицу-результат добавляется
+                    соответствующая «соединённая» строка.
+                    <br><br>
+                    <pre>
+                    SELECT t1.column1, t2.column2
+                    FROM
+                    Table1 t1
+                    INNER JOIN
+                    Table2 t2
+                    {ON &ltcondition> | USING (field_name [,... n])}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal12" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Внешние соединения</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Оператор левого внешнего соединения LEFT OUTER JOIN соединяет две таблицы. Порядок таблиц для
+                    оператора важен, поскольку оператор не является коммутативным.<br>
+                    Заголовок таблицы-результата является объединением (конкатенацией) заголовков соединяемых
+                    таблиц.<br>
+                    Тело результата логически формируется следующим образом. Пусть выполняется соединение левой и правой
+                    таблиц по предикату (условию) p:<br>
+                    1. В результат включается внутреннее соединение (INNER JOIN) левой и правой таблиц по предикату
+                    p.<br>
+                    2. Затем в результат добавляются те строки левой таблицы, которые не вошли во внутреннее соединение
+                    на шаге 1. Для таких строк столбцы, соответствующие правой таблице, заполняются значениями NULL.
+                    <br><br>
+                    <pre>
+                    SELECT t1.column1, t2.column2
+                    FROM table1 t1
+                    LEFT [OUTER] JOIN table2 t2
+                    {ON &ltcondition> | USING (field_name [,... n])}
+                </pre>
+                    Оператор правого внешнего соединения RIGHT OUTER JOIN соединяет две таблицы. Порядок таблиц для
+                    оператора важен, поскольку оператор не является коммутативным.<br>
+                    Заголовок таблицы-результата является объединением (конкатенацией) заголовков соединяемых
+                    таблиц.<br>
+                    Тело результата логически формируется следующим образом. Пусть выполняется соединение левой и правой
+                    таблиц по предикату (условию) p:<br>
+                    1. В результат включается внутреннее соединение (INNER JOIN) левой и правой таблиц по предикату
+                    p.<br>
+                    2. Затем в результат добавляются те строки правой таблицы, которые не вошли во внутреннее соединение
+                    на шаге 1. Для таких строк столбцы, соответствующие левой таблице, заполняются значениями NULL.
+                    <br><br>
+                    <pre>
+                    SELECT t1.column1, t2.column2
+                    FROM table1 t1
+                    RIGHT [OUTER] JOIN table2 t2 
+                    {ON &ltcondition> | USING (field_name [,... n])}
+                    </pre>
+                    Оператор полного внешнего соединения FULL OUTER JOIN соединяет две таблицы. Порядок таблиц для
+                    оператора неважен, поскольку оператор является коммутативным.<br>
+                    Соединяет таблицы аналогично левому и правому внешнему соединению вместе взятых.<br><br>
+                    <pre>
+                    SELECT t1.column1, t2.column2
+                    FROM table1 t1
+                    RIGHT [OUTER] JOIN table2 table2
+                    {ON &ltcondition> | USING (field_name [,... n])}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal13" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Перекрестное соединение</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Оператор перекрёстного соединения, или декартова произведения CROSS JOIN соединяет две таблицы.
+                    Порядок таблиц для оператора неважен, поскольку оператор является коммутативным.<br>
+                    Заголовок таблицы-результата является объединением (конкатенацией) заголовков соединяемых
+                    таблиц.<br>
+                    Тело результата логически формируется следующим образом. Каждая строка одной таблицы соединяется с
+                    каждой строкой второй таблицы, давая тем самым в результате все возможные сочетания строк двух
+                    таблиц.<br><br>
+                    <pre>
+                    SELECT t1.column1, t2.column2
+                    FROM table1 t1
+                    CROSS JOIN table2 t2
+                    {ON &ltcondition> | USING (field_name [,... n])}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal14" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">С условиями соединения</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    При эквисоединении (equi-join) две или более таблиц соединяются на основании условия равенства между
+                    столбцами. Другими словами, один и тот же столбец имеет одинаковое значение во всех соединяемых
+                    таблицах. Ниже приведен пример применения эквисоединения:<br><br>
+                    <pre>
+                    SELECT e.last_name, d.dept
+                    FROM emp e, dept d WHERE e.emp_id = d.emp_id;
+                </pre>
+                    Под рефлексивным соединением (self join) подразумевается соединение таблицы с самой собой за счет
+                    использования псевдонимов. В следующем примере осуществляется соединение таблицы employees с самой
+                    собой при помощи псевдонима с удалением всех дублированных строк.<br><br>
+                    <pre>
+                    DELETE FROM employees X WHERE ROWID >
+                    (select MIN(rowid) FROM employees Y
+                    where X.key_values = Y.key_values);
+                </pre>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
