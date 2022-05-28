@@ -475,7 +475,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Пример ка константы в WHERE</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Пример на константы в WHERE</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
@@ -525,30 +525,19 @@
     <!-- Модальное окно -->
     <div class="modal fade" id="exampleModalToggle5" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Примеры</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    пример на константы:<br>
-                    <pre>
-                        SELECT NAME, HIRE_DATE
-                        FROM SALESREPS
-                        WHERE HIRE_DATE > CURRENT_DATE;
-                        </pre>
-                    Пример 2:<br>
-                    <pre>
-
-                        (SELECT
-                        3.14 AS pi,
-                        2.68 AS e)
-                        SELECT some_table.col1,
-                        (CASE WHEN some_table.col1 &lt consts.pi THEN true ELSE false) AS less_than_pi,
-                        (CASE WHEN some_table.col1 &lt consts.e THEN true ELSE false) AS less_than_e
-                        FROM consts, some_table
-                        </pre>
+                    пример на константы:<br><br>
+                    
+                        SELECT NAME, HIRE_DATE<br>
+                        FROM SALESREPS<br>
+                        WHERE HIRE_DATE > CURRENT_DATE;<br>
+                        
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" data-bs-target="#exampleModal5" data-bs-toggle="modal"
