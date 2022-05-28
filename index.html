@@ -215,23 +215,23 @@
                 </div>
                 <div class="modal-body">
                     Общее количество записей<br>
-                        SELECT COUNT(*) FROM table;<br>
-                        Максимальное значение поля column1<br>
-                        SELECT MAX (column1) FROM table;<br>
-                        Минимальное значение поля column1<br>
-                        SELECT MIN (column1) FROM table;<br>
-                        Среднее значение поля column1<br>
-                        SELECT AVG (column1) FROM table;<br>
-                        Группировка с использованием агрегатных функций<br>
-                        SELECT column1, aggregate (column2)<br>
-                        FROM table<br>
-                        GROUP BY column1;<br>
-                        Фильтрация групп<br>
-                        SELECT column1, aggregate (column2)<br>
-                        FROM table<br>
-                        GROUP BY column1<br>
-                        HAVING condition;<br>
-                        
+                    SELECT COUNT(*) FROM table;<br>
+                    Максимальное значение поля column1<br>
+                    SELECT MAX (column1) FROM table;<br>
+                    Минимальное значение поля column1<br>
+                    SELECT MIN (column1) FROM table;<br>
+                    Среднее значение поля column1<br>
+                    SELECT AVG (column1) FROM table;<br>
+                    Группировка с использованием агрегатных функций<br>
+                    SELECT column1, aggregate (column2)<br>
+                    FROM table<br>
+                    GROUP BY column1;<br>
+                    Фильтрация групп<br>
+                    SELECT column1, aggregate (column2)<br>
+                    FROM table<br>
+                    GROUP BY column1<br>
+                    HAVING condition;<br>
+
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" data-bs-target="#exampleModal2" data-bs-toggle="modal"
@@ -443,6 +443,51 @@
                     Операторы SQL используются для указания сравнений между выражениями.
                     BETWEEN, B, IS NULL, LIKE.
                 </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle1488" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Примеры</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModalToggle1488" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Пример на операторы в WHERE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    Запрос возвращающий всех сотрудников у кого зарплата выше 2500, будет выглядеть следующем образом:<br><br>
+
+                    SELECT * FROM emp<br>
+                    +WHERE sal > 2500<br><br>
+
+                    Например, зарплаты сотрудников у кого она находиться в диапазоне 2500 — 3500.<br><br>
+
+                    SELECT *<br>
+                    FROM emp<br>
+                    +WHERE sal between 2500 and 3500<br><br>
+
+                    К примеру, перед нами стоит задача получить полный список сотрудников которые работают на должности
+                    менеджера и аналиста:<br><br>
+
+                    SELECT * FROM emp<br>
+                    +WHERE job IN ('MANAGER', 'ANALYST')<br><br>
+
+                    Например для поиска всех сотрудников, чьи имена начинается с буквы S будет иметь следующий вид:<br><br>
+
+                    SELECT * FROM emp<br>
+                    WHERE ename like 'S%'
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModal4" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Назад</button>
+                </div>
             </div>
         </div>
     </div>
@@ -533,11 +578,11 @@
                 </div>
                 <div class="modal-body">
                     пример на константы:<br><br>
-                    
-                        SELECT NAME, HIRE_DATE<br>
-                        FROM SALESREPS<br>
-                        WHERE HIRE_DATE > CURRENT_DATE;<br>
-                        
+
+                    SELECT NAME, HIRE_DATE<br>
+                    FROM SALESREPS<br>
+                    WHERE HIRE_DATE > CURRENT_DATE;<br>
+
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" data-bs-target="#exampleModal5" data-bs-toggle="modal"
